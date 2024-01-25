@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Write a Bash script that loops from 1 to 10 and
+#Bash script that displays the time for 12 hours and 59 minutes:
 
 hour=0
 min=1
