@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This line disables shellcheck warning SC2009
+# shellcheck disable=SC2009
+# Display lines containing the word "bash" and filter out the current script process
+
+ps aux | grep bash | grep -v grep | grep -v "$0"
