@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script stops "4-to_infinity_and_beyond" process
+# You cannot use kill or killall
+
+while true
+	echo "To infinity and beyond"
+	sleep 2
+
+	trap 'echo""I am invincible!!!"' SIGTERM
+done
