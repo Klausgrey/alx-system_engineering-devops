@@ -11,8 +11,11 @@ for pid_dir in /proc/*/; do
 
 		# Check if the command line contains the word "bash"
 		if [[ "$cmd" == *bash* ]]; then
-			echo "PID: $pid, Process Name: $cmd"
+			# Extract the process name from the command line
+			process_name=$(basename "$cmd")
+
+			# Print PID and process name
+			echo "$pid $process_name"
 		fi
 	fi
 done
-
