@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Loop through all directories in /proc
+
+for pid_dir in /proc/*/; do
+	pid=$(basename "$pid_dir")
+
+	# Check if the directory name is a number (PID)
+	if [[ "$pid" =~ ^[0-9]+$ ]]; then
+		# Read the command line used to start the process from the cmdline file
+		cmd=$(tr '\0' ' ' < "$pid_dir/cmdline")
+
+		# Check if the command line contains the word "bash"
+		if [[ "$cmd" == *bash* ]]; then
+			echo "PID: $pid, Process Name: $cmd"
+		fi
+	fi
+done
+
